@@ -114,6 +114,11 @@
 
   success = [session overrideOutputAudioPort:kAudioSessionOverrideAudioRoute_None
                                         error:&error];
+  
+  if (@available(iOS 13.0, *)) {
+    [session setAllowHapticsAndSystemSoundsDuringRecording:allow error:&error];
+  }
+  
   if (!success)
     NSLog(@"setSpeakerphoneOnButPreferBluetooth: Port override failed due to: %@", error);
 
