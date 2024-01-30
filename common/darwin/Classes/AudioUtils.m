@@ -116,7 +116,7 @@
                                         error:&error];
   
   if (@available(iOS 13.0, *)) {
-    [session setAllowHapticsAndSystemSoundsDuringRecording:allow error:&error];
+    [session setAllowHapticsAndSystemSoundsDuringRecording:YES error:&error];
   }
   
   if (!success)
